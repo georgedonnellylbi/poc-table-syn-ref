@@ -36,7 +36,7 @@ namespace POCTest
 			// Insert a new Film record
 			var newFilm = new Models.Footage.Film
 			{
-				Title = "Test Film",
+				Title = "Test Film" + DateTime.Now.Ticks,
 				ClubId = 1 // Assumes ClubId 1 exists
 			};
 			footageContext.Films.Add(newFilm);
