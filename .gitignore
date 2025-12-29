@@ -1,0 +1,53 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+# Visual Studio Code
+.vscode/
+# NuGet Packages
+*.nupkg
+# Build Results
+*.dll
+*.exe
+*.app
+*.log
+*.vspscc
+*.vssscc
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+# Rider
+.idea/
+# DotCover
+*.dotCover
+# Test Results
+TestResults/
+*.coverage
+*.coveragexml
+# Entity Framework
+migrations/
+# Others
+*.dbmdl
+*.pdb
+*.cache
+*.config
+*.orig
+*.bak
+*.tmp
+*.vsix
+*.vscode
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+$RECYCLE.BIN/
+*.swp
+*.swo
