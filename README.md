@@ -73,5 +73,15 @@ Summary:
 Synonyms are convenient for cross-database access, but they tightly couple your databases and can break the principle of independent deployments.
 For true independence, use APIs, ETL, or data replication instead of direct synonyms.
 
+Summary:
+
+Data sync jobs reduce runtime coupling but introduce operational coupling.
+
+True independent deployments are only possible if each service/database owns its own data and does not rely on external tables, even for lookups.
+
+For most real-world scenarios, you must balance independence, performance, and operational complexity.
+
+If you want maximum independence, consider duplicating lookup data and updating it only via explicit releases or APIs, accepting some staleness. Otherwise, document and automate your sync/replication process as much as possible.
+
 ## License
 MIT
