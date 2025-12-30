@@ -62,5 +62,16 @@ This project demonstrates cross-database relationships in Entity Framework Core 
 - Navigation properties are kept in partial classes to preserve custom code during scaffolding.
 - SQL Server synonyms allow EF Core to treat cross-database tables as local for navigation and foreign key relationships.
 
+## Deployments
+Does it break independent deployments?
+
+Yes, using synonyms for cross-database or cross-server access introduces a dependency between databases or instances.
+If the target table, database, or server is unavailable, renamed, or its schema changes, the synonym will break and queries will fail.
+This means you cannot deploy or update the databases independently without coordination, as changes in one can impact the other.
+Summary:
+
+Synonyms are convenient for cross-database access, but they tightly couple your databases and can break the principle of independent deployments.
+For true independence, use APIs, ETL, or data replication instead of direct synonyms.
+
 ## License
 MIT
