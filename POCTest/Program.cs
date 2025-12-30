@@ -10,16 +10,14 @@ namespace POCTest
 		static async Task Main(string[] args)
 		{
 			var footageOptions = new DbContextOptionsBuilder<Data.Footage.FootageDbContext>()
-				.UseSqlServer("Server=localhost,14333;Database=footage;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;")
+				.UseSqlServer("Server=localhost,14332;Database=footage;User Id=sa;Password=YourStrongPassw0rd;TrustServerCertificate=True;")
 				.Options;
 			var commonOptions = new DbContextOptionsBuilder<Data.Common.CommonDbContext>()
-				.UseSqlServer("Server=localhost,14333;Database=common;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;")
+				.UseSqlServer("Server=localhost,14331;Database=common;User Id=sa;Password=YourStrongPassw0rd;TrustServerCertificate=True;")
 				.Options;
 
 			using var footageContext = new Data.Footage.FootageDbContext(footageOptions);
 			using var commonContext = new Data.Common.CommonDbContext(commonOptions);
-
-			
 
 			var filmsWithClubs = await footageContext
 				.Films

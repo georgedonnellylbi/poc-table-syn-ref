@@ -24,10 +24,10 @@ This project demonstrates cross-database relationships in Entity Framework Core 
 2. Scaffold the models and contexts using EF Core (adjust connection strings as needed):
   ```sh
   # For the common database
-  dotnet ef dbcontext scaffold 'Server=localhost,14333;Database=common;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;' Microsoft.EntityFrameworkCore.SqlServer --output-dir Data/Common --context-dir Data/Common --context CommonDbContext --use-database-names --no-onconfiguring --force --project POCTest/POCTest.csproj
+  dotnet ef dbcontext scaffold 'Server=localhost,14331;Database=common;User Id=sa;Password=YourStrongPassw0rd;TrustServerCertificate=True;' Microsoft.EntityFrameworkCore.SqlServer --output-dir Models/Common --context-dir Data/Common --context CommonDbContext --use-database-names --no-onconfiguring --force --project POCTest/POCTest.csproj
 
   # For the footage database
- dotnet ef dbcontext scaffold 'Server=localhost,14333;Database=footage;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;' Microsoft.EntityFrameworkCore.SqlServer --output-dir Data/Footage --context-dir Data/Footage --context FootageDbContext --use-database-names --no-onconfiguring --force --project POCTest/POCTest.csproj
+ dotnet ef dbcontext scaffold 'Server=localhost,14332;Database=footage;User Id=sa;Password=YourStrongPassw0rd;TrustServerCertificate=True;' Microsoft.EntityFrameworkCore.SqlServer --output-dir Models/Footage --context-dir Data/Footage --context FootageDbContext --use-database-names --no-onconfiguring --force --project POCTest/POCTest.csproj
   ```
 3. Update connection strings in `Program.cs` as needed for your environment.
 4. Build and run the project:

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using POCTest.Models.Common;
 
 namespace POCTest.Data.Common;
 
@@ -17,11 +18,11 @@ public partial class CommonDbContext : DbContext
     {
         modelBuilder.Entity<Club>(entity =>
         {
-            entity.HasKey(e => e.ClubId).HasName("PK__Clubs__D35058E768121FC3");
+            entity.HasKey(e => e.ClubId).HasName("PK__Clubs__D35058E7BB499C4F");
 
             entity.HasIndex(e => e.CanonicalName, "IX_Clubs_CanonicalName");
 
-            entity.HasIndex(e => e.CanonicalName, "UQ__Clubs__BF902B582EDF4AEC").IsUnique();
+            entity.HasIndex(e => e.CanonicalName, "UQ__Clubs__BF902B58A84443A0").IsUnique();
 
             entity.Property(e => e.CanonicalName).HasMaxLength(100);
         });

@@ -1,12 +1,27 @@
 version: '3.8'
 services:
-  mssql:
+  sql-common:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: mssql
+    container_name: sql-common
     environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=YourStrong!Passw0rd
+      SA_PASSWORD: "YourStrongPassw0rd"
+      ACCEPT_EULA: "Y"
     ports:
-      - "14333:1433"
-    volumes:
-      - ./mssql-init:/docker-entrypoint-initdb.d
+      - "14331:1433"
+    networks:
+      - sqlnet
+
+  sql-footage:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql-footage
+    environment:
+      SA_PASSWORD: "YourStrongPassw0rd"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "14332:1433"
+    networks:
+      - sqlnet
+
+networks:
+  sqlnet:
+    driver: bridge
